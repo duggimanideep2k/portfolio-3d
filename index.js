@@ -37616,52 +37616,53 @@ class rM {
 const oM = [
     {
       id: 0,
-      name: "the iqic",
-      description: "Delivered a professional freelance project for a quality inspection company, creating a comprehensive business website",
-      image: "images/projects/theiqic.jpeg",
-      tags: ["javascript", "html", "css", "freelance"],
-      liveview: "https://theiqic.com/",
-      // github: "https://github.com/satvik9373/coffee-website-.git",
-      alt: "Coffee Shop Website",
+      name: "Multi-Robot Motion Planning",
+      description:
+        "ROS2 + OMPL framework for collision-aware multi-robot navigation using RRT/RRT*, KPIECE, and RVO, validated with hardware-in-the-loop testing.",
+      image: "images/projects/motion-planning.png",
+      tags: ["ros2", "cpp", "python", "ompl"],
+      liveview: "https://github.com/duggimanideep2k",
+      alt: "Multi-Robot Motion Planning",
     },
     {
       id: 1,
-      name: "venchers campaign",
-      description: "a block-based photo sharing system inspired by the historic Million Dollar Homepage concept",
-      image: "images/projects/krushigram.png",
-      tags: ["react", "express", "multer", "googleAuth","Cloudinery"],
-      liveview: "https://venchers-campaign.vercel.app/",
-      alt: "venchers campaign",
+      name: "RL Manipulation — Franka Cube Stacking",
+      description:
+        "PPO cube-stacking policies with imitation learning and behavior cloning in the Genesis simulator, with reward shaping and success-rate metrics.",
+      image: "images/projects/rl-manipulation.png",
+      tags: ["python", "rl", "perception"],
+      liveview: "https://github.com/duggimanideep2k",
+      alt: "RL Manipulation — Franka Cube Stacking",
     },
     {
       id: 2,
-      name: "vapor ui",
-      description: "UI component library featuring 20+ reusable components, text animations, background animations, loading page elements, and interactive UI element ",
-      image: "images/projects/vaporui.jpeg",
-      tags: ["javascript", "react", "ui","framer"],
-      liveview: "https://vapor-ui.vercel.app/",
-      // github: "https://github.com/satvik9373/yoga-class.git",
-      alt: "Fitness Institute",
+      name: "Einstein Vision",
+      description:
+        "2D-to-3D perception pipeline (YOLOv8, Mask R-CNN, MiDaS) with a Tesla-style dashboard for real-time scene understanding.",
+      image: "images/projects/einstein-vision.png",
+      tags: ["python", "cv", "perception"],
+      liveview: "https://github.com/duggimanideep2k",
+      alt: "Einstein Vision",
     },
     {
       id: 3,
-      name: "Quick Labs",
-      description: "Quick labs is an LMS developed for teaching assistants at my university to provide lab solutions, manage materials, and support students.",
-      image: "images/projects/studybuddy.jpeg",
-      tags: ["javascript", "react", "mongodb", ""],
-      liveview: "http://quicklabs.fun/",
-      // github: "https://github.com/satvik9373/Think-Beyond-Marketing",
-      alt: "Digital Marketing Agency",
+      name: "AV Lane-Change Control",
+      description:
+        "Autonomous lane-change control using vehicle dynamics, state-space models, and LQR/MPC concepts in MATLAB.",
+      image: "images/projects/lane-change.png",
+      tags: ["matlab", "controls"],
+      liveview: "https://github.com/duggimanideep2k",
+      alt: "AV Lane-Change Control",
     },
     {
       id: 4,
-      name: "Open Talk",
-      description: "Open Talk is a platform where people can share their achievements and hacks, allowing others to like or dislike them without needing an account.",
-      image: "images/projects/opentalk.jpeg",
-      tags: ["react", "mongodb", "express"],
-      liveview: "https://opentalk1.netlify.app/",
-      // github: "https://github.com/satvik9373/lms-websitee",
-      alt: "Affiliate Marketing and earning Website",
+      name: "Multi-Robot Assistive System",
+      description:
+        "Pepper + Stretch assistive system with speech interaction, ROS2 navigation, and RGB-D grasping — the prototype behind an IROS 2026 paper.",
+      image: "images/projects/assistive-robots.png",
+      tags: ["ros2", "python", "perception"],
+      liveview: "https://github.com/duggimanideep2k",
+      alt: "Multi-Robot Assistive System",
     },
   ],
   aM = {
@@ -37683,6 +37684,15 @@ const oM = [
     tailwind: '<div class="work-item-tag" style="background:rgb(234, 248, 73);">Tailwind</div>',
     game: '<div class="work-item-tag" style="background: #e86ef0;">Game</div>',
     framer: '<div class="work-item-tag" style="background: #e86ef0;">Framer</div>',
+    ros2: '<div class="work-item-tag" style="background: #22314F; color: white;">ROS2</div>',
+    python: '<div class="work-item-tag" style="background: #3776AB; color: white;">Python</div>',
+    cpp: '<div class="work-item-tag" style="background: #00599C; color: white;">C++</div>',
+    ompl: '<div class="work-item-tag" style="background: #6A4C93; color: white;">OMPL</div>',
+    rl: '<div class="work-item-tag" style="background: #E8590C; color: white;">RL</div>',
+    matlab: '<div class="work-item-tag" style="background: #D95319; color: white;">MATLAB</div>',
+    controls: '<div class="work-item-tag" style="background: #2B8A3E; color: white;">Controls</div>',
+    cv: '<div class="work-item-tag" style="background: #1098AD; color: white;">Computer Vision</div>',
+    perception: '<div class="work-item-tag" style="background: #862E9C; color: white;">Perception</div>',
   };
 class lM {
   constructor() {
@@ -37871,24 +37881,24 @@ class lM {
 }
 const cM = [
   {
-    name: "web development",
+    name: "motion planning & ROS2",
     width: "90%",
   },
   {
-    name: "app devlopment",
-    width: "55%",
+    name: "perception & computer vision",
+    width: "85%",
   },
   {
-    name: "graphic design",
-    width: "90%",
-  },
-  {
-    name: "frontend",
+    name: "controls & simulation",
     width: "80%",
   },
   {
-    name: "backend",
+    name: "embedded systems",
     width: "75%",
+  },
+  {
+    name: "python / C++",
+    width: "90%",
   },
 ];
 class hM {
