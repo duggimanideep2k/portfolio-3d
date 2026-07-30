@@ -440,7 +440,7 @@
 #work-render-container {
     position: relative;
     width: 350px;
-    height: 570px;
+    height: 650px;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -488,7 +488,8 @@
 .work-item-content-container {
     padding: 8px 16px;
     box-sizing: border-box;
-    flex: 1
+    flex: 1;
+    overflow-y: auto;
 }
 
 .work-item-content-container a {
