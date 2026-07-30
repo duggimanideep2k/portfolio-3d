@@ -1267,3 +1267,69 @@ section {
 .social-icon:hover {
     transform: scale(1.1); /* Optional: slight scale up on hover */
 }
+
+#project-modal-container {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#project-modal-container.hide {
+    display: none !important;
+}
+#project-modal-backdrop {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(9, 20, 52, 0.8);
+    backdrop-filter: blur(5px);
+}
+#project-modal-content {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    overflow-y: auto;
+    z-index: 10000;
+}
+#project-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #7C8594;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+#project-modal-close:hover {
+    color: #091434;
+}
+#project-modal-image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+#project-modal-title {
+    font-family: Poppins, sans-serif;
+    color: #091434;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#project-modal-tags {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+#project-modal-description {
+    font-family: Poppins, sans-serif;
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 15px;
+    white-space: pre-wrap;
+}

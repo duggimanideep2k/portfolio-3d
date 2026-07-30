@@ -37619,6 +37619,7 @@ const oM = [
       name: "Multi-Robot Motion Planning",
       description:
         "ROS2 + OMPL framework for collision-aware multi-robot navigation using RRT/RRT*, KPIECE, and RVO, validated with hardware-in-the-loop testing.",
+      detailedDescription: "Engineered a scalable multi-robot navigation framework integrating ROS2 and OMPL. Designed collision-aware planning algorithms combining RRT/RRT* for global pathways with KPIECE and Reciprocal Velocity Obstacles (RVO) for dynamic local obstacle avoidance. Successfully simulated and validated through hardware-in-the-loop tests with minimal latency and high trajectory smoothness.",
       image: "images/projects/motion-planning.png",
       tags: ["ros2", "cpp", "python", "ompl"],
       liveview: "https://github.com/duggimanideep2k",
@@ -37629,6 +37630,7 @@ const oM = [
       name: "RL Manipulation — Franka Cube Stacking",
       description:
         "PPO cube-stacking policies with imitation learning and behavior cloning in the Genesis simulator, with reward shaping and success-rate metrics.",
+      detailedDescription: "Trained sophisticated Proximal Policy Optimization (PPO) agents for robotic manipulation within the Genesis simulator. Leveraged imitation learning and behavior cloning to bootstrap policies, accelerating convergence. Engineered complex reward shaping functions focusing on precision grasping and stacking, achieving robust success rates across randomized initial configurations.",
       image: "images/projects/rl-manipulation.png",
       tags: ["python", "rl", "perception"],
       liveview: "https://github.com/duggimanideep2k",
@@ -37639,6 +37641,7 @@ const oM = [
       name: "Einstein Vision",
       description:
         "2D-to-3D perception pipeline (YOLOv8, Mask R-CNN, MiDaS) with a Tesla-style dashboard for real-time scene understanding.",
+      detailedDescription: "Developed a fully localized 2D-to-3D perception pipeline aimed at autonomous driving contexts. Integrated YOLOv8 for real-time bounding box detection, coupled with Mask R-CNN for instance segmentation. Utilized the MiDaS depth estimation model to project 2D semantics into 3D world coordinates. Rendered a comprehensive Tesla-style dashboard for intuitive scene visualization.",
       image: "images/projects/einstein-vision.png",
       tags: ["python", "cv", "perception"],
       liveview: "https://github.com/duggimanideep2k",
@@ -37649,6 +37652,7 @@ const oM = [
       name: "AV Lane-Change Control",
       description:
         "Autonomous lane-change control using vehicle dynamics, state-space models, and LQR/MPC concepts in MATLAB.",
+      detailedDescription: "Designed active lane-change control mechanisms for autonomous vehicles using MATLAB. Modeled highly non-linear vehicle dynamics as state-space equations. Designed and parameterized Linear Quadratic Regulators (LQR) and Model Predictive Control (MPC) algorithms to optimize lane transition trajectories while ensuring passenger comfort and strict constraint satisfaction.",
       image: "images/projects/lane-change.png",
       tags: ["matlab", "controls"],
       liveview: "https://github.com/duggimanideep2k",
@@ -37659,6 +37663,7 @@ const oM = [
       name: "Multi-Robot Assistive System",
       description:
         "Pepper + Stretch assistive system with speech interaction, ROS2 navigation, and RGB-D grasping — the prototype behind an IROS 2026 paper.",
+      detailedDescription: "Spearheaded the integration of a multi-robot assistive platform utilizing Pepper and Stretch robots. Developed a seamless communication architecture with speech synthesis/recognition for user interaction. Implemented autonomous ROS2 navigation stacks and integrated RGB-D point cloud processing on Stretch for adaptive, collision-free object grasping in domestic environments. Contributed findings toward an IROS 2026 paper submission.",
       image: "images/projects/assistive-robots.png",
       tags: ["ros2", "python", "perception"],
       liveview: "https://github.com/duggimanideep2k",
@@ -37704,6 +37709,13 @@ class lM {
       (this.items = oM),
       (this.tags = aM),
       this.renderItems();
+      
+      const modalClose = document.getElementById("project-modal-close");
+      if(modalClose) {
+          modalClose.addEventListener("click", () => {
+              document.getElementById("project-modal-container").classList.add("hide");
+          });
+      }
   }
   renderItems() {
     this.items.forEach((e) => {
@@ -37789,7 +37801,7 @@ class lM {
         // Render only the "Live View" button if a live view link is present
         t = `
             <div id="work-item-orange-button-${e.id}" class="work-item-orange-button small-button center orange-hover" style="width: 100%; margin: 0;">
-                Live View
+                Learn More
             </div>
         `;
     } else if (e.twitter) {
@@ -37867,7 +37879,12 @@ class lM {
         document
             .getElementById("work-item-orange-button-" + e.id)
             .addEventListener("click", () => {
-                window.open(e.liveview, "_blank").focus();
+                const modal = document.getElementById("project-modal-container");
+                document.getElementById("project-modal-image").src = e.image;
+                document.getElementById("project-modal-title").innerText = e.name;
+                document.getElementById("project-modal-tags").innerHTML = this.renderTags(e.tags);
+                document.getElementById("project-modal-description").innerText = e.detailedDescription || e.description;
+                modal.classList.remove("hide");
             });
     } else if (e.twitter) {
         document
@@ -39291,10 +39308,11 @@ class yM {
   }
   async sendMail() {
     this.showContainer("loading");
-    const e = await fetch("./api/contact", {
+    const e = await fetch("https://formsubmit.co/ajax/duggimanideep.dm@gmail.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
       body: JSON.stringify({
         name: this.fields[0].input.value,

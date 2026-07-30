@@ -389,8 +389,8 @@
                                 href="./icons/baby-pixel.png" x="6" y="7" />
 
                             <!--First Text-->
-                            <text x="88" y="33" class="about-text">Manideep is a robotics and AI engineer with an</text>
-                                 <text x="88" y="50" class="about-text">M.S. in Robotics from WPI.</text>
+                            <text x="88" y="33" class="about-text">Manideep is a robotics and AI engineer with</text>
+                            <text x="88" y="50" class="about-text">an M.S. in Robotics from WPI.</text>
 
                         </g>
 
@@ -409,8 +409,8 @@
                             <g id="about-icon-1" transform="translate(417 5) scale(0.8)"> </g>
 
                             <!--Second Text-->
-                            <text x="5" y="33" class="about-text">   He designs, integrates, and validates autonomous   </text>
-                            <text x="5" y="50" class="about-text">  systems — multi-robot coordination, </text>
+                            <text x="400" y="33" class="about-text" text-anchor="end">He designs, integrates, and validates</text>
+                            <text x="400" y="50" class="about-text" text-anchor="end">autonomous systems — multi-robot coordination,</text>
                             <!-- <text x="55" y="70" class="about-text"> platform and more...</text> -->
                         </g>
 
@@ -430,8 +430,9 @@
                                 href="./icons/rocket-pixel.png" x="6" y="7" />
 
                             <!--Third Text-->
-                            <text x="88" y="33" class="about-text">motion planning, perception, and embedded control —</text>
-                            <text x="88" y="50" class="about-text">across lab research and real-world industrial deployments.</text>
+                            <text x="88" y="33" class="about-text">motion planning, perception, &amp; embedded</text>
+                            <text x="88" y="50" class="about-text">control — across lab research and real-world</text>
+                            <text x="88" y="67" class="about-text">industrial deployments.</text>
                         </g>
                     </g>
 
@@ -600,6 +601,18 @@
                    
             </div>
         </footer>
+    </div>
+    
+    <!--Project Modal-->
+    <div id="project-modal-container" class="hide">
+        <div id="project-modal-backdrop"></div>
+        <div id="project-modal-content" class="column">
+            <div id="project-modal-close"><i class="fas fa-times"></i></div>
+            <img id="project-modal-image" src="" alt="Project Image" />
+            <h2 id="project-modal-title"></h2>
+            <div id="project-modal-tags" class="row"></div>
+            <p id="project-modal-description"></p>
+        </div>
     </div>
 
 </body>
