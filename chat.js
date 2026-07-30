@@ -101,4 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Experience Modal ---
+    const expModal = document.getElementById("experience-modal");
+    const expModalClose = document.getElementById("experience-modal-close");
+    const menuExp = document.getElementById("menu-exp");
+
+    if (menuExp) {
+        menuExp.addEventListener("click", () => {
+            expModal.classList.remove("hide");
+        });
+    }
+
+    if (expModalClose) {
+        expModalClose.addEventListener("click", () => {
+            expModal.classList.add("hide");
+        });
+    }
+
 });
