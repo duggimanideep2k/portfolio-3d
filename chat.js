@@ -25,46 +25,37 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("hide");
     });
 
-    function addMessage(text, isBot) {
-        const div = document.createElement("div");
-        div.className = `chat-message ${isBot ? 'bot-message' : 'user-message'}`;
-        div.innerText = text;
-        messages.appendChild(div);
-        messages.scrollTop = messages.scrollHeight;
+    // Load portfolio data from JSON
+    let portfolioData = null;
+    fetch('./data.json')
+        .then(r => r.json())
+        .then(data => { portfolioData = data; })
+        .catch(() => { portfolioData = null; });
+
+    function findAnswer(text) {
+        if (!portfolioData) return "I'm still loading my knowledge base, please try again in a second!";
+        const lower = text.toLowerCase();
+        const sections = ['greeting', 'skills', 'experience', 'projects', 'education', 'publications', 'contact'];
+        for (const key of sections) {
+            const section = portfolioData[key];
+            if (section && section.keywords && section.keywords.some(kw => lower.includes(kw))) {
+                return section.answer;
+            }
+        }
+        return portfolioData.default || "Try asking about Manideep's skills, experience, projects, education, or how to contact him!";
     }
 
     function processInput() {
         const text = input.value.trim();
-        if(!text) return;
-        
+        if (!text) return;
         addMessage(text, false);
         input.value = "";
-        
-        // Disable temporarily
         input.disabled = true;
-        
         setTimeout(() => {
-            const lowerText = text.toLowerCase();
-            let response = "I'm still learning! You can ask me about Manideep's skills, his robotics projects, or how to contact him.";
-            
-            if(lowerText.includes("hello") || lowerText.includes("hi")) {
-                response = "Hello there! How can I answer your questions today?";
-            } else if(lowerText.includes("skill") || lowerText.includes("stack") || lowerText.includes("tech")) {
-                response = "Manideep specializes in ROS2, Python, C++, and MATLAB. He has deep expertise in Multi-Robot Motion Planning, Perception (Computer Vision), and Control Systems!";
-            } else if(lowerText.includes("project") || lowerText.includes("work") || lowerText.includes("portfolio")) {
-                response = "He has done amazing projects from RL-based Manipulation in the Genesis Simulator to building an AV Lane-Change Controller! Scroll up to check out his detailed interactive Project Cards.";
-            } else if(lowerText.includes("contact") || lowerText.includes("email") || lowerText.includes("hire")) {
-                response = "You can easily reach out to him via the Contact form at the bottom of the page, or simply email him directly at duggimanideep.dm@gmail.com.";
-            } else if(lowerText.includes("who")) {
-                response = "Manideep is an M.S. Robotics graduate from WPI. He specializes in designing, integrating, and validating intelligence architectures across multi-robot platforms and embedded controls.";
-            } else if(lowerText.includes("robot") || lowerText.includes("ai")) {
-                response = "Robotics and AI are our bread and butter! We love solving complex state-estimation and dynamic collision-avoidance logic in real time.";
-            }
-            
-            addMessage(response, true);
+            addMessage(findAnswer(text), true);
             input.disabled = false;
             input.focus();
-        }, 600 + Math.random() * 400); // 600-1000ms delay to feel natural
+        }, 500 + Math.random() * 300);
     }
 
     sendBtn.addEventListener("click", processInput);

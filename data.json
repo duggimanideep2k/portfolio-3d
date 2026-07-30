@@ -1,0 +1,32 @@
+{
+  "bio": "Manideep Duggi is a Robotics & AI Engineer completing his M.S. in Robotics Engineering at Worcester Polytechnic Institute (WPI). He specializes in multi-robot systems, ROS2, computer vision, motion planning, and autonomous navigation.",
+  "skills": {
+    "keywords": ["skill", "stack", "tech", "know", "language", "framework", "tools", "programming"],
+    "answer": "Manideep's core skills include: ROS2, Python, C++, MATLAB, PyTorch, OpenCV, Linux, PCL, and MoveIt2. He has deep expertise in multi-robot motion planning, RGB-D perception, reinforcement learning, and embedded control systems."
+  },
+  "experience": {
+    "keywords": ["experience", "work", "job", "worked", "company", "role", "career", "intern"],
+    "answer": "Manideep has 4 key roles: (1) Research Assistant at WPI RoboCare Lab — built a Pepper + Stretch multi-robot assistive system, raising user task awareness from 15.8% to 84.6%. (2) Robotics & Automation Engineer at Virya Autonomous — led integration and debugging of 5+ AMR deployments. (3) Engineer, Smart Solutions R&D at Maini Materials — engineered AMR warehouse automation plans across 20+ sites. (4) Automation Engineer Trainee at Tranqvolt & Festo — built PLC systems and electro-pneumatic industrial solutions."
+  },
+  "projects": {
+    "keywords": ["project", "portfolio", "build", "built", "made", "developed", "research"],
+    "answer": "Manideep's notable projects include: RL-based robotic manipulation in the Genesis Simulator, AV lane-change controller, RGB-D grasping pipeline, ROS2 multi-robot coordination system, and deep learning-based object detection for assistive robots."
+  },
+  "education": {
+    "keywords": ["education", "study", "university", "degree", "gpa", "college", "school", "wpi"],
+    "answer": "Manideep is pursuing an M.S. in Robotics Engineering at Worcester Polytechnic Institute (WPI) with a GPA of 3.8/4.0 (Expected Dec 2025). His coursework includes Deep Learning for Robot Perception, Motion Planning & Kinematics, Foundations of Robotics (ROS2/C++), and Human Robot Interaction."
+  },
+  "publications": {
+    "keywords": ["publication", "paper", "research", "published", "journal", "conference"],
+    "answer": "Manideep has a first-author publication: 'Enhancing Quality of Life for PWD through Context-Aware Assistive Robotics' (WPI RoboCare Lab, Spring 2025). It covers a multi-robot system using Pepper and Stretch robots, proving a 4x increase in user task awareness."
+  },
+  "contact": {
+    "keywords": ["contact", "email", "reach", "hire", "available", "connect", "linkedin"],
+    "answer": "You can reach Manideep at duggimanideep.dm@gmail.com, or fill out the Contact form at the bottom of this page. You can also connect with him on LinkedIn: linkedin.com/in/manideepduggi2k"
+  },
+  "greeting": {
+    "keywords": ["hello", "hi", "hey", "sup", "greetings", "howdy", "yo"],
+    "answer": "Hello! I'm Manideep's Robot Assistant 🤖 I can answer questions about his skills, experience, projects, education, publications, or how to contact him. What would you like to know?"
+  },
+  "default": "I'm not sure about that. Try asking about Manideep's 'skills', 'experience', 'projects', 'education', 'publications', or how to 'contact' him!"
+}
