@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./head/apple-180.png">
     <link rel="apple-touch-icon" sizes="192x192" href="./head/apple-192.png">
     <meta name="msapplication-config" content="/head/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#FF923E">
+    <meta name="msapplication-TileColor" content="#00D4FF">
     <meta name="msapplication-square70x70logo" content="/head/mstile-70.png">
     <meta name="msapplication-square150x150logo" content="/head/mstile-150.png">
     <meta name="msapplication-wide310x150logo" content="/head/mstile-310x150.png">
@@ -41,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="./head/favicon.ico">
     <script type="module" crossorigin src="./index.js"></script>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -72,6 +72,7 @@
             </use>
             <use href="#logo-path" fill="#091434" mask="url(#intro-mask)"></use>
         </svg>
+        <h3 style="color: #FF923E; font-family: Poppins, sans-serif; text-align: center; margin-top: 30px;">Welcome to Manideep's Portfolio</h3>
     </div>
 
     <!--Loading Container-->
@@ -79,7 +80,7 @@
         <!--Top Wave-->
         <svg id="transition-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs>
-                <path fill="#FF923E" id="transition-wave-path"
+                <path fill="#00D4FF" id="transition-wave-path"
                     d="M0,128L21.8,138.7C43.6,149,87,171,131,154.7C174.5,139,218,85,262,69.3C305.5,53,349,75,393,101.3C436.4,128,480,160,524,186.7C567.3,213,611,235,655,213.3C698.2,192,742,128,785,122.7C829.1,117,873,171,916,186.7C960,203,1004,181,1047,160C1090.9,139,1135,117,1178,96C1221.8,75,1265,53,1309,53.3C1352.7,53,1396,75,1418,85.3L1440,96L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z">
                 </path>
             </defs>
@@ -136,6 +137,7 @@
                 </div>
             </div>
 
+
             <!--Menu Button-->
             <div id="menu-button-scale-container">
                 <div id="menu-button" class="center column overlay-button orange-hover">
@@ -176,6 +178,12 @@
                 <div class="column menu-items-column-container">
                     <span class="menu-item">Work</span>
                     <span class="menu-item">Contact</span>
+                </div>
+                <div class="column menu-items-column-container" style="padding-left: 20px;">
+                    <a class="extra-menu-item" href="./resume/Manideep_Resume.pdf" target="_blank">Resume</a>
+                    <span class="extra-menu-item" id="menu-edu">Education</span>
+                    <span class="extra-menu-item" id="menu-pub">Publications</span>
+                    <span class="extra-menu-item" id="menu-cert">Certificates</span>
                 </div>
             </div>
             <!--Menu Social Link-->
@@ -615,6 +623,32 @@
         </div>
     </div>
 
-</body>
+    <!-- Chatbot Widget -->
+    <div id="chatbot-trigger" class="chatbot-pulse">
+        <i class="fas fa-robot" style="color: white; font-size: 26px;"></i>
+    </div>
 
+    <div id="chatbot-modal" class="hide">
+        <div id="chatbot-header">
+            <h3>Manideep's Assistant</h3>
+            <div id="chatbot-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div id="chatbot-messages">
+            <div class="chat-message bot-message">Hi! I'm Manideep's Robot Assistant 🤖 How can I help you today? Try asking about his "skills", "projects", or "contact".</div>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Type a message..." autocomplete="off">
+            <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <script type="module" src="./chat.js"></script>
+
+    <!-- Generic Info Modal -->
+    <div id="info-modal" class="hide">
+        <i id="info-modal-close" class="fas fa-times"></i>
+        <h2 id="info-modal-title">Title</h2>
+        <div id="info-modal-body">Content goes here...</div>
+    </div>
+</body>
 </html>

@@ -33341,7 +33341,8 @@ class hw {
   }
   setModel() {
     (this.model = this.resources.items.contactSceneModel.scene),
-      this.scene.add(this.model);
+      // this.scene.add(this.model);
+      console.log('Disabled hand model load');
   }
   setMaterial() {
     (this.texture = this.resources.items.bakedContactTexture),
@@ -33368,7 +33369,8 @@ class uw {
       this.setMaterial();
   }
   setModel() {
-    (this.model = this.resource.scene), this.contactScene.model.add(this.model);
+    (this.model = this.resource.scene);
+    // this.contactScene.model.add(this.model);
   }
   setMaterial() {
     (this.shadowTexture = this.resources.items.bakedShadowContactTexture),
