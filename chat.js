@@ -72,54 +72,79 @@ document.addEventListener("DOMContentLoaded", () => {
         if(e.key === "Enter") processInput();
     });
 
+    // --- Modal Elements ---
+    const infoModal     = document.getElementById("info-modal");
+    const infoModalClose = document.getElementById("info-modal-close");
+    const infoModalTitle = document.getElementById("info-modal-title");
+    const infoModalBody  = document.getElementById("info-modal-body");
+
+    const expModal      = document.getElementById("experience-modal");
+    const expModalClose = document.getElementById("experience-modal-close");
+
+    const menuEdu  = document.getElementById("menu-edu");
+    const menuPub  = document.getElementById("menu-pub");
+    const menuCert = document.getElementById("menu-cert");
+    const menuExp  = document.getElementById("menu-exp");
+
+    // Close ALL open modals (chatbot, info, experience)
+    function closeAllModals() {
+        if (modal)     modal.classList.add("hide");
+        if (infoModal) infoModal.classList.add("hide");
+        if (expModal)  expModal.classList.add("hide");
+        isOpen = false;
+    }
+
+    // --- Education ---
     if (menuEdu) {
         menuEdu.addEventListener("click", () => {
             closeAllModals();
             infoModalTitle.innerText = "Education";
             infoModalBody.innerHTML = `
-                <div style="font-family: 'Electrolize', sans-serif;">
+                <div style="font-family:'Electrolize',sans-serif;">
                     <h3 style="color:#00D4FF;">Worcester Polytechnic Institute (WPI)</h3>
-                    <p style="color:#CBD5E1; margin-top:5px;">Master of Science in Robotics Engineering<br><span style="color:#FF923E; font-size:14px;">GPA: 3.8/4.0 | Expected Dec 2025</span></p>
-                    <ul style="margin-top:15px; padding-left:20px; line-height:1.6; color:#F8FAFC;">
+                    <p style="color:#CBD5E1;margin-top:5px;">Master of Science in Robotics Engineering<br>
+                    <span style="color:#FF923E;font-size:14px;">GPA: 3.8/4.0 | Expected Dec 2025</span></p>
+                    <ul style="margin-top:15px;padding-left:20px;line-height:1.8;color:#F8FAFC;">
                         <li>Deep Learning for Advanced Robot Perception</li>
-                        <li>Motion Planning & Kinematics</li>
+                        <li>Motion Planning &amp; Kinematics</li>
                         <li>Foundations of Robotics (ROS2/C++)</li>
                         <li>Human Robot Interaction (HRI)</li>
                     </ul>
-                </div>
-            `;
+                    <h3 style="color:#00D4FF;margin-top:25px;">Mahatma Gandhi Institute of Technology</h3>
+                    <p style="color:#CBD5E1;margin-top:5px;">Bachelor of Technology in Electronics &amp; Communication Engineering</p>
+                </div>`;
             infoModal.classList.remove("hide");
         });
     }
 
+    // --- Publications ---
     if (menuPub) {
         menuPub.addEventListener("click", () => {
             closeAllModals();
             infoModalTitle.innerText = "Publications";
             infoModalBody.innerHTML = `
-                <div style="font-family: 'Electrolize', sans-serif;">
+                <div style="font-family:'Electrolize',sans-serif;">
                     <h3 style="color:#00D4FF;">Enhancing Quality of Life for PWD through Context-Aware Assistive Robotics</h3>
-                    <p style="color:#CBD5E1; margin-top:5px;"><span style="color:#FF923E; font-size:14px;">WPI RoboCare Lab | Spring 2025</span></p>
-                    <p style="margin-top:15px; line-height:1.6; color:#F8FAFC;">
+                    <p style="color:#CBD5E1;margin-top:5px;"><span style="color:#FF923E;font-size:14px;">WPI RoboCare Lab | Spring 2025</span></p>
+                    <p style="margin-top:15px;line-height:1.6;color:#F8FAFC;">
                         First-author publication engineering a multi-robot system utilizing SoftBank Pepper and Hello Robot Stretch 3. Proved significant reduction in cognitive load and a 4x increase in user task awareness through contextual state-machine modeling.
                     </p>
-                </div>
-            `;
+                </div>`;
             infoModal.classList.remove("hide");
         });
     }
 
+    // --- Certificates ---
     if (menuCert) {
         menuCert.addEventListener("click", () => {
             closeAllModals();
             infoModalTitle.innerText = "Certifications";
             infoModalBody.innerHTML = `
-                 <div style="font-family: 'Electrolize', sans-serif;">
-                    <h3 style="color:#00D4FF;">Udacity Nanodegree: C++ </h3>
-                    <h3 style="color:#00D4FF; margin-top:20px;">LinkedIn Learning: ROS2 Masterclass</h3>
-                    <h3 style="color:#00D4FF; margin-top:20px;">NVIDIA Deep Learning Institute: Computer Vision</h3>
-                </div>
-            `;
+                <div style="font-family:'Electrolize',sans-serif;">
+                    <h3 style="color:#00D4FF;">Udacity Nanodegree: C++</h3>
+                    <h3 style="color:#00D4FF;margin-top:20px;">LinkedIn Learning: ROS2 Masterclass</h3>
+                    <h3 style="color:#00D4FF;margin-top:20px;">NVIDIA Deep Learning Institute: Computer Vision</h3>
+                </div>`;
             infoModal.classList.remove("hide");
         });
     }
@@ -130,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Experience ---
     if (menuExp) {
         menuExp.addEventListener("click", () => {
             closeAllModals();
