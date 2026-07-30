@@ -39291,7 +39291,7 @@ class yM {
   }
   async sendMail() {
     this.showContainer("loading");
-    const e = await fetch("/api/contact", {
+    const e = await fetch("./api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42090,9 +42090,9 @@ class EM {
       {
         name: "mouseWheel",
         files: [
-          "/sounds/mouse-wheel-0.mp3",
-          "/sounds/mouse-wheel-1.mp3",
-          "/sounds/mouse-wheel-2.mp3",
+          "./sounds/mouse-wheel-0.mp3",
+          "./sounds/mouse-wheel-1.mp3",
+          "./sounds/mouse-wheel-2.mp3",
         ],
         group: "landing",
         volume: 0.6,
@@ -42100,47 +42100,47 @@ class EM {
       {
         name: "bubble",
         files: [
-          "/sounds/bubble-0.mp3",
-          "/sounds/bubble-1.mp3",
-          "/sounds/bubble-2.mp3",
+          "./sounds/bubble-0.mp3",
+          "./sounds/bubble-1.mp3",
+          "./sounds/bubble-2.mp3",
         ],
         group: "lab",
         volume: 0.2,
       },
       {
         name: "roomAmbience",
-        files: ["/sounds/room-ambience.mp3"],
+        files: ["./sounds/room-ambience.mp3"],
         group: "landing",
         volume: 0.1,
         html5: !0,
       },
       {
         name: "notification",
-        files: ["/sounds/notification.mp3"],
+        files: ["./sounds/notification.mp3"],
         group: "landing",
         volume: 0.25,
       },
       {
         name: "longKeyboard",
-        files: ["/sounds/long-keyboard.mp3"],
+        files: ["./sounds/long-keyboard.mp3"],
         group: "landing",
         volume: 0.5,
       },
       {
         name: "labAmbience",
-        files: ["/sounds/lab-ambience.mp3"],
+        files: ["./sounds/lab-ambience.mp3"],
         group: "lab",
         volume: 0.15,
       },
       {
         name: "waterSplash",
-        files: ["/sounds/water-splash.mp3"],
+        files: ["./sounds/water-splash.mp3"],
         group: "lab",
         volume: 0.3,
       },
       {
         name: "hologram",
-        files: ["/sounds/hologram.mp3"],
+        files: ["./sounds/hologram.mp3"],
         group: "lab",
         volume: 0.8,
       },
@@ -42158,37 +42158,37 @@ class EM {
       },
       {
         name: "waterUp",
-        files: ["/sounds/water-up.mp3"],
+        files: ["./sounds/water-up.mp3"],
         group: "general",
         volume: 0.5,
       },
       {
         name: "gasp",
-        files: ["/sounds/gasp.mp3"],
+        files: ["./sounds/gasp.mp3"],
         group: "general",
         volume: 0.2,
       },
       {
         name: "buttonClick",
-        files: ["/sounds/button-click.mp3"],
+        files: ["./sounds/button-click.mp3"],
         group: "general",
         volume: 1,
       },
       {
         name: "chairDown",
-        files: ["/sounds/chair-down.mp3"],
+        files: ["./sounds/chair-down.mp3"],
         group: "landing",
         volume: 0.4,
       },
       {
         name: "chairImpact",
-        files: ["/sounds/chair-impact.mp3"],
+        files: ["./sounds/chair-impact.mp3"],
         group: "landing",
         volume: 1,
       },
       {
         name: "bird",
-        files: ["/sounds/bird.mp3"],
+        files: ["./sounds/bird.mp3"],
         group: "landing",
         volume: 0.6,
       },

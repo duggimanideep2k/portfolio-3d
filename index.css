@@ -1218,8 +1218,8 @@ section {
     font-family: Electrolize;
     font-style: normal;
     font-weight: 400;
-    src: url(/electrolize-v14-latin-regular.eot);
-    src: local(""), url(/electrolize-v14-latin-regular.eot?#iefix) format("embedded-opentype"), url(/electrolize-v14-latin-regular.woff2) format("woff2"), url(/electrolize-v14-latin-regular.woff) format("woff"), url(/electrolize-v14-latin-regular.ttf) format("truetype"), url(/electrolize-v14-latin-regular.svg#Electrolize) format("svg");
+    src: url(./electrolize-v14-latin-regular.eot);
+    src: local(""), url(./electrolize-v14-latin-regular.eot?#iefix) format("embedded-opentype"), url(./electrolize-v14-latin-regular.woff2) format("woff2"), url(./electrolize-v14-latin-regular.woff) format("woff"), url(./electrolize-v14-latin-regular.ttf) format("truetype"), url(./electrolize-v14-latin-regular.svg#Electrolize) format("svg");
     font-display: swap
 }
 
@@ -1227,8 +1227,8 @@ section {
     font-family: Poppins;
     font-style: normal;
     font-weight: 400;
-    src: url(/poppins-v19-latin-regular.eot);
-    src: local(""), url(/poppins-v19-latin-regular.eot?#iefix) format("embedded-opentype"), url(/poppins-v19-latin-regular.woff2) format("woff2"), url(/poppins-v19-latin-regular.woff) format("woff"), url(/poppins-v19-latin-regular.ttf) format("truetype"), url(/poppins-v19-latin-regular.svg#Poppins) format("svg");
+    src: url(./poppins-v19-latin-regular.eot);
+    src: local(""), url(./poppins-v19-latin-regular.eot?#iefix) format("embedded-opentype"), url(./poppins-v19-latin-regular.woff2) format("woff2"), url(./poppins-v19-latin-regular.woff) format("woff"), url(./poppins-v19-latin-regular.ttf) format("truetype"), url(./poppins-v19-latin-regular.svg#Poppins) format("svg");
     font-display: swap
 }
 
@@ -1236,8 +1236,8 @@ section {
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
-    src: url(/poppins-v19-latin-500.eot);
-    src: local(""), url(/poppins-v19-latin-500.eot?#iefix) format("embedded-opentype"), url(/poppins-v19-latin-500.woff2) format("woff2"), url(/poppins-v19-latin-500.woff) format("woff"), url(/poppins-v19-latin-500.ttf) format("truetype"), url(/poppins-v19-latin-500.svg#Poppins) format("svg");
+    src: url(./poppins-v19-latin-500.eot);
+    src: local(""), url(./poppins-v19-latin-500.eot?#iefix) format("embedded-opentype"), url(./poppins-v19-latin-500.woff2) format("woff2"), url(./poppins-v19-latin-500.woff) format("woff"), url(./poppins-v19-latin-500.ttf) format("truetype"), url(./poppins-v19-latin-500.svg#Poppins) format("svg");
     font-display: swap
 }
 
@@ -1245,8 +1245,8 @@ section {
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    src: url(/poppins-v19-latin-600.eot);
-    src: local(""), url(/poppins-v19-latin-600.eot?#iefix) format("embedded-opentype"), url(/poppins-v19-latin-600.woff2) format("woff2"), url(/poppins-v19-latin-600.woff) format("woff"), url(/poppins-v19-latin-600.ttf) format("truetype"), url(/poppins-v19-latin-600.svg#Poppins) format("svg");
+    src: url(./poppins-v19-latin-600.eot);
+    src: local(""), url(./poppins-v19-latin-600.eot?#iefix) format("embedded-opentype"), url(./poppins-v19-latin-600.woff2) format("woff2"), url(./poppins-v19-latin-600.woff) format("woff"), url(./poppins-v19-latin-600.ttf) format("truetype"), url(./poppins-v19-latin-600.svg#Poppins) format("svg");
     font-display: swap
 }
 
@@ -1254,8 +1254,8 @@ section {
     font-family: Poppins;
     font-style: normal;
     font-weight: 700;
-    src: url(/poppins-v19-latin-700.eot);
-    src: local(""), url(/poppins-v19-latin-700.eot?#iefix) format("embedded-opentype"), url(/poppins-v19-latin-700.woff2) format("woff2"), url(/poppins-v19-latin-700.woff) format("woff"), url(/poppins-v19-latin-700.ttf) format("truetype"), url(/poppins-v19-latin-700.svg#Poppins) format("svg");
+    src: url(./poppins-v19-latin-700.eot);
+    src: local(""), url(./poppins-v19-latin-700.eot?#iefix) format("embedded-opentype"), url(./poppins-v19-latin-700.woff2) format("woff2"), url(./poppins-v19-latin-700.woff) format("woff"), url(./poppins-v19-latin-700.ttf) format("truetype"), url(./poppins-v19-latin-700.svg#Poppins) format("svg");
     font-display: swap
 }
 
