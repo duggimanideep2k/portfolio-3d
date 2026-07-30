@@ -73,6 +73,35 @@
             <use href="#logo-path" fill="#091434" mask="url(#intro-mask)"></use>
         </svg>
         <h3 style="color: #FF923E; font-family: Poppins, sans-serif; text-align: center; margin-top: 30px;">Welcome to Manideep's Portfolio</h3>
+        <div style="width: 250px; height: 5px; background: rgba(0,0,0,0.1); border-radius: 5px; margin-top: 15px; overflow: hidden;">
+            <div id="loading-bar" style="height: 100%; width: 0%; background: #00D4FF; transition: width 0.1s linear;"></div>
+        </div>
+        <div id="loading-pct" style="color: #091434; font-family: Poppins, sans-serif; margin-top: 15px; font-weight: 800; font-size: 1.2rem;">0%</div>
+        <script>
+            const pct = document.getElementById('loading-pct');
+            const bar = document.getElementById('loading-bar');
+            let loaded = 0;
+            let interval = setInterval(() => {
+                if(loaded < 99) loaded += 1;
+                pct.innerText = loaded + '%';
+                bar.style.width = loaded + '%';
+                if(document.getElementById('intro-container').classList.contains('hide')) {
+                    clearInterval(interval);
+                    pct.innerText = '100%';
+                    bar.style.width = '100%';
+                }
+            }, 30);
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((m) => {
+                    if (m.target.classList.contains('hide')) {
+                        pct.innerText = '100%';
+                        bar.style.width = '100%';
+                        clearInterval(interval);
+                    }
+                });
+            });
+            observer.observe(document.getElementById('intro-container'), { attributes: true, attributeFilter: ['class'] });
+        </script>
     </div>
 
     <!--Loading Container-->
@@ -176,7 +205,7 @@
                     <span class="menu-item">About</span>
                 </div>
                 <div class="column menu-items-column-container">
-                    <span class="menu-item">Work</span>
+                    <span class="menu-item">Projects</span>
                     <span class="menu-item">Contact</span>
                 </div>
                 <div class="column menu-items-column-container" style="padding-left: 20px;">

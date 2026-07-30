@@ -72,42 +72,67 @@ document.addEventListener("DOMContentLoaded", () => {
         if(e.key === "Enter") processInput();
     });
 
-    // --- Info Modals ---
-    const infoModal = document.getElementById("info-modal");
-    const infoModalClose = document.getElementById("info-modal-close");
-    const infoModalTitle = document.getElementById("info-modal-title");
-    const infoModalBody = document.getElementById("info-modal-body");
+    if (menuEdu) {
+        menuEdu.addEventListener("click", () => {
+            closeAllModals();
+            infoModalTitle.innerText = "Education";
+            infoModalBody.innerHTML = `
+                <div style="font-family: 'Electrolize', sans-serif;">
+                    <h3 style="color:#00D4FF;">Worcester Polytechnic Institute (WPI)</h3>
+                    <p style="color:#CBD5E1; margin-top:5px;">Master of Science in Robotics Engineering<br><span style="color:#FF923E; font-size:14px;">GPA: 3.8/4.0 | Expected Dec 2025</span></p>
+                    <ul style="margin-top:15px; padding-left:20px; line-height:1.6; color:#F8FAFC;">
+                        <li>Deep Learning for Advanced Robot Perception</li>
+                        <li>Motion Planning & Kinematics</li>
+                        <li>Foundations of Robotics (ROS2/C++)</li>
+                        <li>Human Robot Interaction (HRI)</li>
+                    </ul>
+                </div>
+            `;
+            infoModal.classList.remove("hide");
+        });
+    }
 
-    const modalData = {
-        "menu-edu": { title: "Education", content: "<h3>WPI (Worcester Polytechnic Institute)</h3><p>M.S. Robotics Engineering</p><hr><h3>Undergrad</h3><p>B.S. Robotics & Automation</p>" },
-        "menu-pub": { title: "Publications", content: "<p><strong>Integrating Large Language Models and Foundation Models into Multi-Agent Robotics</strong><br>Published 2024</p>" },
-        "menu-cert": { title: "Certificates", content: "<ul><li>ROS2 Advanced Mechanics</li><li>NVIDIA Deep Learning Engineer</li><li>AWS Machine Learning</li></ul>" }
-    };
+    if (menuPub) {
+        menuPub.addEventListener("click", () => {
+            closeAllModals();
+            infoModalTitle.innerText = "Publications";
+            infoModalBody.innerHTML = `
+                <div style="font-family: 'Electrolize', sans-serif;">
+                    <h3 style="color:#00D4FF;">Enhancing Quality of Life for PWD through Context-Aware Assistive Robotics</h3>
+                    <p style="color:#CBD5E1; margin-top:5px;"><span style="color:#FF923E; font-size:14px;">WPI RoboCare Lab | Spring 2025</span></p>
+                    <p style="margin-top:15px; line-height:1.6; color:#F8FAFC;">
+                        First-author publication engineering a multi-robot system utilizing SoftBank Pepper and Hello Robot Stretch 3. Proved significant reduction in cognitive load and a 4x increase in user task awareness through contextual state-machine modeling.
+                    </p>
+                </div>
+            `;
+            infoModal.classList.remove("hide");
+        });
+    }
 
-    ["menu-edu", "menu-pub", "menu-cert"].forEach(id => {
-        const btn = document.getElementById(id);
-        if(btn) {
-            btn.addEventListener("click", () => {
-                infoModalTitle.innerHTML = modalData[id].title;
-                infoModalBody.innerHTML = modalData[id].content;
-                infoModal.classList.remove("hide");
-            });
-        }
-    });
+    if (menuCert) {
+        menuCert.addEventListener("click", () => {
+            closeAllModals();
+            infoModalTitle.innerText = "Certifications";
+            infoModalBody.innerHTML = `
+                 <div style="font-family: 'Electrolize', sans-serif;">
+                    <h3 style="color:#00D4FF;">Udacity Nanodegree: C++ </h3>
+                    <h3 style="color:#00D4FF; margin-top:20px;">LinkedIn Learning: ROS2 Masterclass</h3>
+                    <h3 style="color:#00D4FF; margin-top:20px;">NVIDIA Deep Learning Institute: Computer Vision</h3>
+                </div>
+            `;
+            infoModal.classList.remove("hide");
+        });
+    }
 
-    if(infoModalClose) {
+    if (infoModalClose) {
         infoModalClose.addEventListener("click", () => {
             infoModal.classList.add("hide");
         });
     }
 
-    // --- Experience Modal ---
-    const expModal = document.getElementById("experience-modal");
-    const expModalClose = document.getElementById("experience-modal-close");
-    const menuExp = document.getElementById("menu-exp");
-
     if (menuExp) {
         menuExp.addEventListener("click", () => {
+            closeAllModals();
             expModal.classList.remove("hide");
         });
     }

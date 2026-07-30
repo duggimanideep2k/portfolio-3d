@@ -1337,14 +1337,14 @@ section {
 
 /* --- Added Extra Menu Items --- */
 .extra-menu-item {
-    font-size: 2.22222vh;
-    padding: 0.55555vh 0;
-    margin-right: 50px;
+    font-size: 1.8rem;
+    padding: 0;
+    margin: 15px 0;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     transition: 0.3s;
     text-decoration: none;
-    color: inherit;
+    color: #091434;
     display: block;
 }
 .extra-menu-item:hover {
