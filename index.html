@@ -210,10 +210,10 @@
                 </div>
                 <div class="column menu-items-column-container" style="padding-left: 20px;">
                     <a class="extra-menu-item" href="./resume/Manideep_Resume.pdf" target="_blank">Resume</a>
-                    <span class="extra-menu-item" id="menu-exp">Experience</span>
-                    <span class="extra-menu-item" id="menu-edu">Education</span>
-                    <span class="extra-menu-item" id="menu-pub">Publications</span>
-                    <span class="extra-menu-item" id="menu-cert">Certificates</span>
+                    <span class="extra-menu-item" id="menu-exp" onclick="openModal('experience-modal')">Experience</span>
+                    <span class="extra-menu-item" id="menu-edu" onclick="openModal('edu')">Education</span>
+                    <span class="extra-menu-item" id="menu-pub" onclick="openModal('pub')">Publications</span>
+                    <span class="extra-menu-item" id="menu-cert" onclick="openModal('cert')">Certificates</span>
                 </div>
             </div>
             <!--Menu Social Link-->
@@ -727,5 +727,72 @@
 
         </div>
     </div>
+    <!-- Modal Control Script -->
+    <script>
+        function closeAllPortfolioModals() {
+            ['info-modal','experience-modal','chatbot-modal'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.classList.add('hide');
+            });
+        }
+
+        function openModal(type) {
+            closeAllPortfolioModals();
+            if (type === 'experience-modal') {
+                var m = document.getElementById('experience-modal');
+                if (m) m.classList.remove('hide');
+                return;
+            }
+            var title = '', body = '';
+            if (type === 'edu') {
+                title = 'Education';
+                body = '<div style="font-family:sans-serif">'
+                    + '<h3 style="color:#00D4FF">Worcester Polytechnic Institute (WPI)</h3>'
+                    + '<p style="color:#CBD5E1;margin-top:5px">M.S. Robotics Engineering<br><span style="color:#FF923E;font-size:14px">GPA: 3.8/4.0 | Expected Dec 2025</span></p>'
+                    + '<ul style="margin-top:15px;padding-left:20px;line-height:1.8;color:#F8FAFC">'
+                    + '<li>Deep Learning for Advanced Robot Perception</li>'
+                    + '<li>Motion Planning &amp; Kinematics</li>'
+                    + '<li>Foundations of Robotics (ROS2/C++)</li>'
+                    + '<li>Human Robot Interaction (HRI)</li>'
+                    + '</ul>'
+                    + '<h3 style="color:#00D4FF;margin-top:25px">Mahatma Gandhi Institute of Technology</h3>'
+                    + '<p style="color:#CBD5E1;margin-top:5px">B.Tech in Electronics &amp; Communication Engineering</p>'
+                    + '</div>';
+            } else if (type === 'pub') {
+                title = 'Publications';
+                body = '<div style="font-family:sans-serif">'
+                    + '<h3 style="color:#00D4FF">Enhancing Quality of Life for PWD through Context-Aware Assistive Robotics</h3>'
+                    + '<p style="color:#CBD5E1;margin-top:5px"><span style="color:#FF923E;font-size:14px">WPI RoboCare Lab | Spring 2025</span></p>'
+                    + '<p style="margin-top:15px;line-height:1.6;color:#F8FAFC">First-author publication engineering a multi-robot system utilizing SoftBank Pepper and Hello Robot Stretch 3. Proved a 4x increase in user task awareness through contextual state-machine modeling.</p>'
+                    + '</div>';
+            } else if (type === 'cert') {
+                title = 'Certifications';
+                body = '<div style="font-family:sans-serif">'
+                    + '<h3 style="color:#00D4FF">Udacity Nanodegree: C++</h3>'
+                    + '<h3 style="color:#00D4FF;margin-top:20px">LinkedIn Learning: ROS2 Masterclass</h3>'
+                    + '<h3 style="color:#00D4FF;margin-top:20px">NVIDIA Deep Learning Institute: Computer Vision</h3>'
+                    + '</div>';
+            }
+            var m = document.getElementById('info-modal');
+            var t = document.getElementById('info-modal-title');
+            var b = document.getElementById('info-modal-body');
+            if (m && t && b) {
+                t.innerText = title;
+                b.innerHTML = body;
+                m.classList.remove('hide');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var infoClose = document.getElementById('info-modal-close');
+            if (infoClose) infoClose.addEventListener('click', function() {
+                document.getElementById('info-modal').classList.add('hide');
+            });
+            var expClose = document.getElementById('experience-modal-close');
+            if (expClose) expClose.addEventListener('click', function() {
+                document.getElementById('experience-modal').classList.add('hide');
+            });
+        });
+    </script>
 </body>
 </html>
