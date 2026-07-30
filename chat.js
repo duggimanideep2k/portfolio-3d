@@ -33,17 +33,72 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(() => { portfolioData = null; });
 
     function findAnswer(text) {
-        if (!portfolioData) return "I'm still loading my knowledge base, please try again in a second!";
-        const lower = text.toLowerCase();
-        const sections = ['greeting', 'skills', 'experience', 'projects', 'education', 'publications', 'contact'];
-        for (const key of sections) {
-            const section = portfolioData[key];
-            if (section && section.keywords && section.keywords.some(kw => lower.includes(kw))) {
-                return section.answer;
-            }
+        if (!portfolioData) return "I'm still loading — please try again in a second!";
+        const q = text.toLowerCase();
+
+        // Greeting
+        if (/\b(hi|hello|hey|sup|yo|greetings)\b/.test(q)) {
+            return `Hello! 👋 I'm Manideep's Robot Assistant 🤖 Ask me about his skills, experience, projects, education, publications, or how to contact him!`;
         }
-        return portfolioData.default || "Try asking about Manideep's skills, experience, projects, education, or how to contact him!";
+
+        // Who / bio
+        if (/\b(who|about|bio|summary|background)\b/.test(q)) {
+            const p = portfolioData.profile;
+            return `${p.name} is a ${p.title}. ${p.summary}`;
+        }
+
+        // Skills
+        if (/\b(skill|tech|stack|language|programming|tools|know|framework)\b/.test(q)) {
+            const s = portfolioData.skills;
+            return `Manideep's skills span multiple areas:\n`
+                + `• Programming: ${s.programming_and_development.join(', ')}\n`
+                + `• Robotics & Autonomy: ${s.robotics_and_autonomy.join(', ')}\n`
+                + `• Perception & Sensors: ${s.sensors_perception_and_data.join(', ')}\n`
+                + `• Controls & Electromechanical: ${s.electromechanical_and_controls.slice(0,5).join(', ')} & more\n`
+                + `• Planning: ${s.planning_and_algorithms.join(', ')}`;
+        }
+
+        // Experience / work history
+        if (/\b(experience|work|job|career|role|company|intern|virya|maini|wpi|robocare|tranqvolt)\b/.test(q)) {
+            const exps = portfolioData.experience;
+            return `Manideep has ${exps.length} key roles:\n`
+                + exps.map((e, i) => `${i+1}. ${e.role} @ ${e.organization} (${e.start}–${e.end}): ${e.highlights[0]}`).join('\n');
+        }
+
+        // Projects
+        if (/\b(project|build|built|made|develop|portfolio|simulation|planner|rl|vision|einstein|lane)\b/.test(q)) {
+            const projs = portfolioData.projects;
+            return `Manideep's key projects:\n`
+                + projs.map((p, i) => `${i+1}. ${p.name} [${p.stack.join(', ')}] — ${p.highlights[0]}`).join('\n');
+        }
+
+        // Education
+        if (/\b(education|study|university|degree|gpa|college|school|wpi|srm|graduate|undergrad)\b/.test(q)) {
+            const edu = portfolioData.education;
+            return edu.map(e => `${e.degree} — ${e.institution} (${e.start}–${e.end}), GPA: ${e.gpa}`).join('\n');
+        }
+
+        // Publications / research
+        if (/\b(publication|paper|research|published|journal|conference|iros)\b/.test(q)) {
+            const r = portfolioData.research[0];
+            return `${r.title} — ${r.venue} (${r.status}). ${r.description}`;
+        }
+
+        // Contact
+        if (/\b(contact|email|reach|hire|available|connect|linkedin|github|phone)\b/.test(q)) {
+            const c = portfolioData.profile.contact;
+            return `You can reach Manideep at:\n📧 ${c.email}\n📞 ${c.phone}\n💼 ${c.linkedin}\n💻 ${c.github}\nOr use the Contact form at the bottom of this page!`;
+        }
+
+        // Quick facts / open to work
+        if (/\b(open|looking|available|hire|relocat|opportunity|role)\b/.test(q)) {
+            const qf = portfolioData.quick_facts;
+            return `Manideep is open to: ${qf.open_to}. He has ${qf.years_of_experience} years of experience in ${qf.core_domains.slice(0,3).join(', ')} and more.`;
+        }
+
+        return `I'm not sure about that! Try asking about Manideep's "skills", "experience", "projects", "education", "publications", or how to "contact" him.`;
     }
+
 
     function processInput() {
         const text = input.value.trim();
